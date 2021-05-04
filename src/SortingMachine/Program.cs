@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Serilog;
 
-namespace SortMyDownloads
+namespace FileSortingMachine
 {
     public class Program
     {
@@ -34,7 +34,6 @@ namespace SortMyDownloads
             {
                 Log.CloseAndFlush();
             }
-         
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
