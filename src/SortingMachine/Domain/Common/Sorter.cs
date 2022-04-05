@@ -8,6 +8,5 @@ namespace FileSortingMachine
     {
         public virtual Dictionary<string,ISortBehavior> SortBehaviors { get; set; }
         public virtual Task DoSort(FileInfo file) => Task.CompletedTask;
-
     }
 }

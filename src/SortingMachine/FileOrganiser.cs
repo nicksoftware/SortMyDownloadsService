@@ -10,9 +10,11 @@ namespace FileSortingMachine
 {
     public class FileOrganiser
     {
+        public static string DownloadsFolder = @"Downloads\SortFilesInHere\";
 
         public static  int SortMyFiles(IEnumerable<string> filePaths)
         {
+            //Register File Sorters
             var sorters = new List<Sorter>
             {
                 new ImageSorter(),
@@ -30,7 +32,6 @@ namespace FileSortingMachine
                 {
                     if (!sorter.SortBehaviors.ContainsKey(file.Extension))
                         continue;
-
                     sorter.DoSort(file);
                 }
             }
@@ -39,7 +40,7 @@ namespace FileSortingMachine
 
         public static string GetFolderPath()
         {
-            return Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+            return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),DownloadsFolder);
         }
     }
 }

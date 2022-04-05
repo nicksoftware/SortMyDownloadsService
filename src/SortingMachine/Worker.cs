@@ -22,7 +22,7 @@ namespace FileSortingMachine
             {
                 try
                 {
-                    var downloadsDirectory = Path.Combine(FileOrganiser.GetFolderPath(), @"Downloads\SortFilesInHere\");
+                    var downloadsDirectory =FileOrganiser.GetFolderPath();
 
                     var downloadsFiles = Directory.GetFiles(downloadsDirectory);
 
